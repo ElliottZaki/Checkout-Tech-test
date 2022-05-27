@@ -38,6 +38,18 @@ describe Checkout do
       subject.total
       expect(subject.total_cost).to eq(66.78)
     end
+
+    it 'will apply a discount on Lavender_hearts if there are two or more' do
+      product = Product.new(001, 'Lavender_heart', 9.25)
+      product2 = Product.new(002, 'Kids T-shirt', 19.95)
+      product3 = Product.new(001, 'Lavender_heart', 9.25)
+      subject.scan(product)
+      subject.scan(product2)
+      subject.scan(product3)
+      subject.total
+      expect(subject.total_cost).to eq(36.95)
+    end
   end
 end
+
 
