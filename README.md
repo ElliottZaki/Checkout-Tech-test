@@ -45,7 +45,7 @@ As a consumer,
 So that I can see how much I need to pay,
 I would like each item to have a cost.
 
-nouns: client, product, marketplace, item, code, name, cost.
+nouns: vendor, consumer, product, marketplace, item, code, name, cost.
 verbs: add, identify, see
 
 ### Functional diagram - First User story
@@ -56,5 +56,34 @@ marketplace      | see             |
 item             |                 |
 code             |                 |
 name             |                 |
+cost             |                 |
+------------------------------------ 
+
+
+## Second User Story:
+As a consumer,
+So that I can see how much I am paying,
+I would like to be able to see a total cost.
+
+As a marketplace vendor,
+So that I can encourage more sales,
+I would like to apply a discount for every two of the same item sold.
+
+As a marketplace vendor,
+So that I can encourage more sales,
+I would like to apply a discount of 10% if the consumer spends £60 or more.
+
+nouns: consumer, vendor, sale(s), marketplace, discount, item, sold, cost.
+verbs: see, encourage, apply, spend(s)
+
+### Functional diagram - Second User story
+___________________________________
+consumer         | see             |
+vendor           | encourage       |
+sales            | apply           |
+marketplace      | spend           |
+discount         |                 |
+item             |                 |
+sold             |                 |
 cost             |                 |
 ------------------------------------ 
