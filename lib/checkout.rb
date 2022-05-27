@@ -8,6 +8,7 @@ class Checkout
     @scanned_products = []
   end
 
-  def scan
+  def scan(product)
+    @scanned_products << product
   end
 end
