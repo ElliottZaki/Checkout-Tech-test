@@ -1,8 +1,13 @@
+require_relative 'product'
+
 class Checkout
 
-  def scan
+  attr_reader :scanned_products
 
+  def initialize
+    @scanned_products = []
   end
 
-
+  def scan
+  end
 end
