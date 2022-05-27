@@ -14,5 +14,16 @@ describe Checkout do
       expect(subject.scanned_products[1]).to eq({:cost => 9.25, :name => 'Lavender_heart', :quantity => 1})
     end
   end
+
+  describe '.total' do
+    it 'returns tht total cost for all scanned_products' do
+      product = Product.new(001, 'Lavender_heart', 9.25)
+      product2 = Product.new(002, 'Personalised cufflinks', 45.00)
+      subject.scan(product)
+      subject.scan(product2)
+      subject.total
+      expect(subject.total_cost).to eq(54.25)
+    end
+  end
 end
 
