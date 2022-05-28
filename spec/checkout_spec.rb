@@ -49,6 +49,17 @@ describe Checkout do
       subject.total
       expect(subject.total_cost).to eq(36.95)
     end
+
+    it 'will apply both discounts and amend the total cost accordingly' do
+      product = Product.new(001, 'Lavender_heart', 9.25)
+      product2 = Product.new(002, 'Personalised cufflinks', 45.00)
+      product3 = Product.new(001, 'Lavender_heart', 9.25)
+      subject.scan(product)
+      subject.scan(product2)
+      subject.scan(product3)
+      subject.total
+      expect(subject.total_cost).to eq(55.80)
+    end
   end
 end
 
